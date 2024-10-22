@@ -3842,6 +3842,10 @@ class SearchApiSolrBackend extends BackendPluginBase implements SolrBackendInter
           else {
             $facet_field->setMissing(FALSE);
           }
+
+          if ($info['prefix']) {
+            $facet_field->setPrefix($info['prefix']);
+          }
       }
 
       // For "OR" facets, add the expected tag for exclusion.
